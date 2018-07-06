@@ -1,6 +1,11 @@
 # QuartzDome
 Quartz整合SpringBoot,包含定时任务简单的api应用实例
 
+## Quartz使用注意事项
+1. 当使用Cron表达式生成定时任务时,开始时间若早于当前时间(即开始时间已过),该定时任务会失败
+
+2.当创建的job的name和group相同时会失败
+
 ## Cron表达式
 Cron表达式是一个字符串，字符串以5或6个空格隔开，分为6或7个域，每一个域代表一个含义，Cron有如下两种语法格式：
 - Seconds Minutes Hours DayofMonth Month DayofWeek Year
