@@ -2,7 +2,6 @@ package cn.joes.controller;
 
 import cn.joes.service.QuartzService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -32,7 +31,7 @@ public class QuartzController {
 
     @PostMapping(value = "/addjob/cron")
     public void addSimplejob(@RequestParam(value = "jobClassName") String jobClassName,
-                             @RequestParam(value = "jobClassName") String jobName,
+                             @RequestParam(value = "jobName") String jobName,
                              @RequestParam(value = "jobGroupName") String jobGroupName,
                              @RequestParam(value = "cronExpression") String cronExpression,
                              @RequestParam(value = "mapData", required = false) Map<String, Object> mapData) throws Exception {

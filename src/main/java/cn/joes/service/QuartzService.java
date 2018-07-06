@@ -72,7 +72,7 @@ public class QuartzService {
         JobDetail jobDetail = JobBuilder.newJob(getClass(jobClassName).getClass()).withIdentity(jobName, groupName).usingJobData(new JobDataMap(jobDataMap)).build();
 
         //按新的cronExpression表达式构建一个新的trigger
-        Trigger trigger = TriggerBuilder.newTrigger().withIdentity(jobClassName, groupName)
+        Trigger trigger = TriggerBuilder.newTrigger().withIdentity(jobName, groupName)
                 .withSchedule(scheduleBuilder).build();
 
         try {
